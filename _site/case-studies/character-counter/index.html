@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Product Design: Building CharacterCounter, A Typography Tool</title>
+
+    <link href="/theme.css" rel="stylesheet" /><meta content="Product Design: Building CharacterCounter, A Typography Tool" name="title" />
+<meta
+  content="Product Design: Building CharacterCounter, A Typography Tool"
+  property="og:title"
+/>
+<meta
+  content="Product Design: Building CharacterCounter, A Typography Tool"
+  property="og:site_name"
+/>
+<meta
+  content="Product Design: Building CharacterCounter, A Typography Tool"
+  property="twitter:title"
+/>
+
+<meta content="Jason" name="twitter:site" />
+<meta content="Jason" name="twitter:creator" />
+
+<meta
+  name="description"
+  content="Building a web app to improve my design workflow and learning a small but mighty bit of JavaScript in the process."
+/>
+<meta
+  property="og:description"
+  content="Building a web app to improve my design workflow and learning a small but mighty bit of JavaScript in the process."
+/>
+<meta
+  property="twitter:description"
+  content="Building a web app to improve my design workflow and learning a small but mighty bit of JavaScript in the process."
+/>
+
+<meta
+  name="twitter:image:alt"
+  content="Jason says, it's me."
+/>
+<meta
+  property="og:image:secure_url"
+  content="https://res.cloudinary.com/jasontcrabtree/image/upload/v1573418454/Portfolio-Assets/CharCount-Cover-Image-4.png"
+/>
+<meta
+  property="twitter:image"
+  content="https://res.cloudinary.com/jasontcrabtree/image/upload/v1573418454/Portfolio-Assets/CharCount-Cover-Image-4.png"
+/>
+
+<meta
+  content="https://res.cloudinary.com/jasontcrabtree/image/upload/v1573418454/Portfolio-Assets/CharCount-Cover-Image-4.png"
+  property="og:image"
+/>
+<meta
+  content="https://res.cloudinary.com/jasontcrabtree/image/upload/v1573418454/Portfolio-Assets/CharCount-Cover-Image-4.png"
+  property="twitter:image"
+/>
+
+<meta content="https://jasontcrabtree.com" property="twitter:url" />
+<meta
+  content="https://jasontcrabtree.com/"
+  property="og:url"
+/>
+<link
+  href="https://jasontcrabtree.com/"
+  rel="canonical"
+/>
+
+<meta content="website" property="og:type" />
+<meta content="summary_large_image" property="twitter:card" />
+<link href="../../static/star.svg" rel="icon" type="image/png" />
+</head><body>
+        <nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/blog-posts">Blog Posts</a></li>
+        <li><a href="/work">Case Studies</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav><p>import CaseStudyReadTime from &quot;@/components/utils/CaseStudyReadTime&quot;;
+import GIFImage from &quot;@/components/GIFImage&quot;;</p>
+<CaseStudyReadTime readTime="6"/>
+<p><em>Note: This was originally published on Medium in Feb of 2019, which you can find here <a href="https://medium.com/@jasontcrabtree/building-character-counter-2670b30a7ef0">Character Counter Case Study, Medium</a></em></p>
+<h2>Overview: What’s the Product</h2>
+<p>CharacterCounter is a simple, lightweight tool to count how many characters you’ve entered into a simple textbox.</p>
+<p>Focused on working as quickly as possible, CharacterCounter gives you the information you need exactly when you need it. Then you can get straight back to what you were doing.</p>
+<p>Having a precise, easy way to count the number of characters they’re using helps writers be measured and deliberate when they’re writing, editing and creating content. This can be useful for writing headlines, ad copy, tweets, email subject lines, designing interfaces or filling in web forms.</p>
+<blockquote>
+<p>You can check it out at <a href="https://charactercounter.netlify.com/">CharacterCounter live product</a> (just make sure you come back to finish the case study!)</p>
+</blockquote>
+<p>You can also visit the Product Hunt launch if you’d like to see how that went at <a href="https://www.producthunt.com/posts/charactercounter">Product Hunt: CharacterCounter</a></p>
+<GIFImage gifSource="https://res.cloudinary.com/jasontcrabtree/image/upload/v1581088985/Portfolio-2020/hello-world-count.gif" altGIF="GIF of CharacterCounter showing the 12 characters in the phrase Hello World"/>
+<blockquote>
+<p>CharacterCounter gives you the info you need when you need it, letting you get straight back to what you were doing.</p>
+</blockquote>
+<h2>Project Overview, Lessons and Contributions</h2>
+<p>This was a personal project built to scratch a personal itch while <a href="https://practicaltypography.com/line-length.html">learning about typography ideal line-lengths.</a></p>
+<p>As I worked on the design and development of this project I realised just how often I had previously been opening Google Docs for just this purpose. CharacterCounter is custom built to do one thing quickly and well.</p>
+<p>My design goals focused on speed, simplicity and clear visual hierarchy. People who use the tool can open a new tab, type or copy in their content and instantly get the results they need before moving on.</p>
+<p>This project was a joy to work on and is one of the first JavaScript tools I’ve conceived, designed and built from scratch. It was a ton of fun (and a great learning opportunity)</p>
+<h2>Design Challenge: What problem was I solving</h2>
+<p>It can be time-consuming to quickly and accurately check how many characters are in a given section of writing. The importance of specific character counts is relevant in several situations; writing emails, article headlines, tweets, interface design and even many web forms.</p>
+<p>Existing solutions like loading a google doc or other similar word processing tool can take 20–30 seconds, interrupting workflows and slowing you down.</p>
+<p>Character Counter gives a quick and focused solution to this problem.</p>
+<h3>The ideal use-case (to complete in just a few seconds)</h3>
+<p><img src="~/assets/images/charactercounter/cc-use-case-flow.png" alt="The Ideal Use-Case. 1. Realise Product Need, 2. Quickly Use Product, 3. Get back to Original Task!"></p>
+<ol>
+<li>Load a new tab or page (or navigate to an existing tab!)</li>
+<li>Navigate to the CharacterCounter page URL</li>
+<li>Type or paste in text to confirm character number</li>
+<li>Return to original task without breaking flow state</li>
+</ol>
+<h2>Design Constraints: What are the constraints</h2>
+<p>Because of the primary goal of speed, the final solution needs to be lightweight. This limits codebase size, features and complexity.</p>
+<p>This speed constraint also restricts the use of third-party libraries such as <a href="https://clipboardjs.com/">Clipboard.JS</a> (I want this to be AS fast as possible, every micro-second counts towards the goal of avoiding flow-state disruption).</p>
+<h2>Research: User Research &amp; Existing-Solutions</h2>
+<p>As a project primarily built to scratch a personal itch — the research for this focused on my specific use case and needs. I would mostly be using the final product for interface design, writing article headlines, designing interface line-lengths and filling in web forms.</p>
+<p>I started by exploring existing options. Surely I reasoned, a solution already existed. And, some did! But nothing quite fit.</p>
+<p><img src="~/assets/images/charactercounter/apple-script-counter.png" alt="Image of Right-Click Services AppleScript Function to Count Word and Characters"></p>
+<ol>
+<li>The first solution I found was an <a href="https://gist.github.com/mechanomi/1616556">AppleScript hosted on GitHub</a>. This created a system-wide function that enabled you to select the text, right-click and then be told the number of words and characters present. After some testing, I discovered that the script didn’t work in Figma (my main design tool — and one of the common use-case) and that drag selecting text, right-clicking and using the script itself was <strong><em>clunky and awkward</em></strong>.</li>
+</ol>
+<p><img src="~/assets/images/charactercounter/tweet-productrequest.png" alt="Tweet requesting a macOS MenuBar Character Counting App"></p>
+<ol start="2">
+<li>After discounting the AppleScript solution, I explored the possibility of a macOS Menu Bar App. When Google failed to produce results I turned to Twitter. Unfortunately, the lone heart proves my request for a new product didn’t go as viral as I might have hoped!</li>
+</ol>
+<p><img src="~/assets/images/charactercounter/js-character-counter.png" alt="A hacky solution to my character counting goals — heavily taken from w3schools"></p>
+<blockquote>
+<p>Eventually, I hacked together a solution. Perfect! Ship it. (I’m sure this is awful code, but I’m so proud it works!)</p>
+</blockquote>
+<ol>
+<li>Finally, I decided to build the solution myself. Enter several (too many to admit) nights of copying and pasting JS from w3school tutorials while trying to figure out how to A) connect JS to a textbox, and B) then count the number of characters present. <strong><em>Eventually, I hacked together a working solution. Perfect! Ship it.</em></strong></li>
+</ol>
+<h2>Testing Usability: Version 1.0</h2>
+<p>The first version worked, in the sense that you could type text and it would load quickly. Unfortunately, usability fell over. I initially picked a Google Font. This caused page-delays while the font loaded. The font I chose (and quickly changed) was thin, making quick scanning of the relevant info difficult.</p>
+<p>After a few weeks testing this out I realised the improvements I could achieve with a system font stack (using default computer system-level fonts) and strong visual hierarchy. This led to Version 2.0.</p>
+<p><img src="~/assets/images/charactercounter/character-counter-v1.png" alt="The first version of CharacterCounter. Functional, but not pretty."></p>
+<p>Plus, the first version also completely broke on mobile screens and narrow browser windows. Not ideal.</p>
+<h2>The Great Iteration: Incorporating Usability Lessons</h2>
+<p>After a few weeks using the original, hastily designed Version 1.0, it was time to make some changes. The focus would be on designing a minimal, well-spaced layout emphasising strong visual hierarchy to help identify key information.</p>
+<p>The new design incorporates a copy button to improve usability, letting text be quickly copied and carried away for use.</p>
+<p><img src="~/assets/images/charactercounter/redlining-and-sections.png" alt="Different Iterations of Formatting/Layout and the Final Layout used to plan the HTML File"></p>
+<h2>Presenting the Product: Final Polish</h2>
+<p>The final product is minimal, focused and fully responsive, working across mobile and desktop. It uses CSS Grid, Vanilla JS and loads the system fonts associated with your computer, preventing a delayed trip to load a font.</p>
+<p>The page loads quickly and easily, a perfect addition to my workflow for writing, designing and general internet usage.</p>
+<p>Hopefully, it’ll be helpful for others too 💯🥳</p>
+<p><img src="~/assets/images/charactercounter/cc-responsive-views.png" alt="The Finished Product. The final image of Character Counter on Desktop and Mobile"></p>
+<p>I’ve even managed to include a small animation. The button interaction confirms the textbox content has been successfully copied.</p>
+<GIFImage gifSource="https://res.cloudinary.com/jasontcrabtree/image/upload/v1581088985/Portfolio-2020/clicked-copy-animation.gif" altGIF="GIF of the copy button in action, including the button label changing. Fancy."/>
+<h2>Implementation: Technical launch and Implementation Details</h2>
+<p>This was the first project I’ve made using JavaScript (that wasn’t directly following a tutorial). All in all, the CSS and HTML is solid, if basic, while the JS can absolutely be improved in the future.</p>
+<h3>Key technical features</h3>
+<ul>
+<li>The code is open source and hosted on <a href="https://github.com/jasontcrabtree/CharacterCounter">GitHub</a>, while the page itself is deployed through <a href="https://www.netlify.com/">Netlify</a>. Netlify offers free domains — and a global CDN network to help with speed and performance.</li>
+<li>Media queries have been used to make the page more usable on a mobile phone (including small screens such as iPhone SE’s).</li>
+<li>The ‘Copy Text’ button dynamically changes when clicked — confirming the text has been copied.</li>
+<li>The page automatically counts characters after each keyboard interaction, creating a smooth interaction experience.</li>
+<li>Future technical improvements: The click to copy button <strong><em>doesn’t</em></strong> work on mobile and has been disabled. Something to fix!</li>
+</ul>
+<h2>Outcomes: Results vs. Goals</h2>
+<p>The speed results are the main outcomes I’m interested in. I aimed to build a fast, effective tool for my workflow. This effectively achieves that goal.</p>
+<p>I can load a new tab (<strong>⌘ + T</strong> on Mac, <strong>Ctrl + T</strong> on Windows + Linux), type or paste in whatever I’m working on and get back to my original task within a few seconds — consistently and every time. No more strange, delayed google doc loading freezes (for this particular task at least!)</p>
+<p><img src="~/assets/images/charactercounter/pingdom-speed-results.png" alt="Pingdom Website Speed Test: Load time 452 ms"></p>
+<h2>Lessons: Lessons Learnt</h2>
+<ol>
+<li>It’s so cool to want a tool — and then just go and make it!</li>
+<li>This is the first JS thing I’ve done outside a tutorial. Honestly, I’m not even sure</li>
+<li>if I know how it works, but I hacked it together to achieve the goal I wanted(including the bells and whistles of the click to copy button, and the button text changing!)</li>
+<li>The goal of speed was met which feels very rewarding.
+The visual design and usability feel solid, I’ll happily load this multiple times a day as needed!</li>
+</ol>
+<p>Overall, this was a great mini-project to hack on. I discovered a lovely sense of joy in creating a solution for a problem I was experiencing. For now, onwards to the next one!</p>
+<p><em>PS.</em> After publishing this I spoke with <a href="https://twitter.com/k00">Kostya Gorskiy</a> — a design manager at Intercom. While chatting over coffee Kostya was kind enough to give me some feedback on how I could improve and refine the visual design of Character Counter.</p>
+<p>The main feedback focused on simplifying typography. As a result, we’ve gone from 8 different slight colour/boldness/size variations (it sounds like so many said like that!) to 4 different variations. These changes have been updated in the images so you get to see the final outcome! Enjoy.</p>
+<hr>
+<h2>Wrapping Up</h2>
+<p>Read next case study about being a design lead for <a href="/work/repairer-allocation">Design Discovery in a Traditional Insurance Company</a>.</p>
+</body>
+
+</html>
+
+<script src="/assets/gsap.min.js"></script>
